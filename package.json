@@ -1,0 +1,32 @@
+{
+  "name": "church-office",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/berlin-church/church-office.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/berlin-church/church-office/issues"
+  },
+  "homepage": "https://github.com/berlin-church/church-office#readme",
+  "dependencies": {
+    "next": "^9.3.5",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  },
+  "devDependencies": {
+    "@types/node": "^13.13.0",
+    "@types/react": "^16.9.34",
+    "typescript": "^3.8.3"
+  }
+}
