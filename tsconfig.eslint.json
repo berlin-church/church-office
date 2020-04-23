@@ -1,0 +1,18 @@
+{
+    "extends": "./tsconfig.json",
+    "include": [
+      "_pages",
+      "e2e_tests",
+      "pages",
+      "src",
+      "typings",
+      ".eslintrc.js",
+      "definitions.d.ts",
+      "fileMock.ts",
+      "*.config.*"
+    ],
+    "exclude": [
+      "next-env.d.ts"
+    ]
+  }
+  
