@@ -1,4 +1,7 @@
+![CI](https://github.com/berlin-church/church-office/workflows/CI/badge.svg?branch=master)
+
 # Church Office
+
 This is the frontend application used by the Berlin.Church.
 
 
