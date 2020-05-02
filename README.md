@@ -13,7 +13,19 @@ npm install
 
 # Running
 
-After installing you can simply run it via:
+Before running this code locally for development, you need to configure the file next.config.js.
+
+```javascript
+module.exports = {
+  env: {
+    auth_domain: 'church-office.eu.auth0.com',
+    auth_client_id: 'xxxxx',
+    origin: 'http://localhost:3000'
+  }
+}
+```
+
+After installing and setting configuration, you can simply run it via:
 
 ```sh
 npm run dev

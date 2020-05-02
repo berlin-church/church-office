@@ -1,4 +1,4 @@
-import { PopupLoginOptions, LogoutOptions } from '@auth0/auth0-spa-js/dist/typings/global'
+import { LogoutOptions } from '@auth0/auth0-spa-js/dist/typings/global'
 import { User } from '../auth0-provider'
 
 interface LoginParams {
@@ -13,20 +13,14 @@ interface NotAuthenticated {
 class AuthProvider {
   isAuthenticated: boolean
   user: User | undefined
-  popupOpen: boolean
   authLogout: (o?: LogoutOptions | undefined) => void
-  loginWithPopup: (options: PopupLoginOptions) => Promise<void>
 
   constructor (
     isAuthenticated: boolean,
     user: User | undefined,
-    popupOpen: boolean,
-    loginWithPopup: (options: PopupLoginOptions) => Promise<void>,
     logout: (o?: LogoutOptions | undefined) => void) {
     this.isAuthenticated = isAuthenticated
     this.user = user
-    this.popupOpen = popupOpen
-    this.loginWithPopup = loginWithPopup
     this.authLogout = logout
   }
 

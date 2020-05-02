@@ -29,7 +29,7 @@ export interface Auth0Context {
   getTokenSilently(o?: GetTokenSilentlyOptions): Promise<string | undefined>
   getTokenWithPopup(o?: GetTokenWithPopupOptions): Promise<string | undefined>
   logout(o?: LogoutOptions): void
-  getAuthProvider(): AuthProvider
+  authProvider: AuthProvider
 }
 
 interface Auth0ProviderOptions {
@@ -58,7 +58,7 @@ const Auth0Provider = ({
   useEffect(() => {
     const initAuth0 = async () => {
       console.debug('initAuth0')
-      const auth0FromHook = await createAuth0Client({ cacheLocation: 'localstorage', ...initOptions })
+      const auth0FromHook = await createAuth0Client({ ...initOptions })
       setAuth0(auth0FromHook)
 
       if (window.location.search.includes('code=')) {
@@ -113,7 +113,7 @@ const Auth0Provider = ({
   const getTokenSilently = async (o: GetTokenSilentlyOptions | undefined) => await auth0Client!.getTokenSilently(o)
   const loginWithRedirect = async (o: RedirectLoginOptions) => await auth0Client!.loginWithRedirect(o)
   const getIdTokenClaims = async (o: GetIdTokenClaimsOptions | undefined) => await auth0Client!.getIdTokenClaims(o)
-  const getAuthProvider = () => new AuthProvider(isAuthenticated, user as User, popupOpen, loginWithPopup, logout)
+  const authProvider = new AuthProvider(isAuthenticated, user, logout)
 
   return (
     <Auth0Context.Provider
@@ -129,7 +129,7 @@ const Auth0Provider = ({
         getTokenSilently,
         getTokenWithPopup,
         logout,
-        getAuthProvider
+        authProvider
       }}
     >
       { children }
