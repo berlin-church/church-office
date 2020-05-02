@@ -3,22 +3,31 @@ import jsonServerProvider from 'ra-data-json-server';
 import { Admin } from 'react-admin'
 import { Resource } from 'ra-core'
 import { ListGuesser } from 'ra-ui-materialui'
-import authProvider from '../utils/authProvider'
+import AuthProvider from '../components/auth0-provider/provider'
+import Login from './login'
 
 export const config = { amp: false }
 
 const dataProvider = jsonServerProvider('https://jsonplaceholder.typicode.com');
 
 const Home = () => {
-  const { loading /* isAuthenticated */ } = useAuth0() as Auth0Context;
+  const { loading, isAuthenticated, user, popupOpen, loginWithPopup, logout } = useAuth0() as Auth0Context;
 
   if (loading) return <div>Loading...</div>
 
-  // if (!isAuthenticated) return <div>Not authenticated.</div>
+  const authProvider = new AuthProvider(isAuthenticated, user, popupOpen, loginWithPopup, logout)
+
+  if (isAuthenticated) {
+    return (
+      <Admin loginPage={Login} dataProvider={dataProvider} authProvider={authProvider}>
+        <Resource name="users" list={ListGuesser} />
+      </Admin>
+    )
+  }
 
   return (
-    <Admin dataProvider={dataProvider} authProvider={authProvider}>
-      <Resource name="users" list={ListGuesser} />
+    <Admin loginPage={Login} dataProvider={dataProvider} authProvider={authProvider}>
+      <Resource name="users" />
     </Admin>
   )
 }
