@@ -8,7 +8,8 @@ module.exports = {
     /* The order here matters: one overwrittes the other,
     please do NOT change the order */
     'standard-with-typescript',
-    'plugin:jest/all'
+    'plugin:jest/all',
+    'plugin:react/recommended'
   ],
   plugins: ['@typescript-eslint', 'jest'],
   parser: '@typescript-eslint/parser',
@@ -20,6 +21,7 @@ module.exports = {
   rules: {
     'no-unused-vars': 0,
     'jest/lowercase-name': 'off',
+    "react/react-in-jsx-scope": "off",
     indent: ['error', 2],
     '@typescript-eslint/explicit-function-return-type': 'off',
     '@typescript-eslint/no-non-null-assertion': 'off',
