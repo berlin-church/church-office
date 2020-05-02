@@ -43,7 +43,8 @@ class AuthProvider {
   checkAuth = async (params: unknown): Promise<NotAuthenticated | void> => {
     if (this.isAuthenticated) return await Promise.resolve()
 
-    return await this.loginWithPopup({})
+    // eslint-disable-next-line prefer-promise-reject-errors
+    return await Promise.reject({ redirectTo: '/login' })
   }
 
   checkError = async (reason: unknown): Promise<void> => {

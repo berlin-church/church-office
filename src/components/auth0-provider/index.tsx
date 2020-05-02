@@ -38,7 +38,7 @@ interface Auth0ProviderOptions {
 }
 
 const DEFAULT_REDIRECT_CALLBACK = () => {
-  // window.history.replaceState({}, document.title, window.location.pathname)
+  window.history.replaceState({}, document.title, window.location.pathname)
 }
 
 export const Auth0Context = React.createContext<Auth0Context | null>(null)
@@ -57,7 +57,7 @@ const Auth0Provider = ({
 
   useEffect(() => {
     const initAuth0 = async () => {
-      console.info(initOptions)
+      console.debug('initAuth0')
       const auth0FromHook = await createAuth0Client({ cacheLocation: 'localstorage', ...initOptions })
       setAuth0(auth0FromHook)
 

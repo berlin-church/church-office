@@ -23,11 +23,13 @@
   "homepage": "https://github.com/berlin-church/church-office#readme",
   "dependencies": {
     "@auth0/auth0-spa-js": "^1.7.0",
+    "@material-ui/core": "^4.9.12",
+    "@material-ui/styles": "^4.9.10",
     "next": "^9.3.5",
     "ra-data-json-server": "^3.4.3",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-admin": "^3.4.3"
+    "react-admin": "^3.4.3",
+    "react-dom": "^16.13.1"
   },
   "devDependencies": {
     "@types/node": "^13.13.2",

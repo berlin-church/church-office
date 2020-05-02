@@ -17,17 +17,9 @@ const Home = () => {
 
   const authProvider = new AuthProvider(isAuthenticated, user, popupOpen, loginWithPopup, logout)
 
-  if (isAuthenticated) {
-    return (
-      <Admin loginPage={Login} dataProvider={dataProvider} authProvider={authProvider}>
-        <Resource name="users" list={ListGuesser} />
-      </Admin>
-    )
-  }
-
   return (
     <Admin loginPage={Login} dataProvider={dataProvider} authProvider={authProvider}>
-      <Resource name="users" />
+      <Resource name="users" list={ListGuesser} />
     </Admin>
   )
 }
