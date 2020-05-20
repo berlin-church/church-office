@@ -4,6 +4,7 @@
 
 This is the frontend application used by the Berlin.Church.
 
+<img width="532" alt="Screenshot 2020-05-20 at 19 46 37" src="https://user-images.githubusercontent.com/694113/82479517-cceb3e00-9ad2-11ea-98df-383dd83f741e.png">
 
 # Installation
 
