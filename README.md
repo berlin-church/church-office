@@ -15,6 +15,14 @@ npm install
 
 Before running this code locally for development, you need to configure the file next.config.js.
 
+Copy the next.config.js.sample as follow.
+
+```bash
+cp next.config.js.sample next.config.js
+```
+
+Then edit this file to include your Auth0 configuration.
+
 ```javascript
 module.exports = {
   env: {
