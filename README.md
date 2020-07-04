@@ -2,8 +2,9 @@
 
 # Church Office
 
-This is the frontend application used by the Berlin.Church.
+This is the frontend application used by the Berlin.Church. You are free to clone it.
 
+This project relies on Oauth0 for authentication. You need to have an account configured before you run it.
 
 # Installation
 
@@ -13,27 +14,7 @@ npm install
 
 # Running
 
-Before running this code locally for development, you need to configure the file next.config.js.
-
-Copy the next.config.js.sample as follow.
-
-```bash
-cp next.config.js.sample next.config.js
-```
-
-Then edit this file to include your Auth0 configuration.
-
-```javascript
-module.exports = {
-  env: {
-    auth_domain: 'church-office.eu.auth0.com',
-    auth_client_id: 'xxxxx',
-    origin: 'http://localhost:3000'
-  }
-}
-```
-
-After installing and setting configuration, you can simply run it via:
+Before running this code locally for development, you need to configure the environment variables in file next.config.js.
 
 ```sh
 npm run dev
