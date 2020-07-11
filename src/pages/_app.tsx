@@ -4,7 +4,7 @@ import Auth0Provider from '../components/auth0-provider'
 
 const domain = process.env.auth_domain as string
 const clientId = process.env.auth_client_id as string
-const origin = process.env.autho_origin as string
+const origin = process.env.auth_origin as string
 
 const App = ({ Component, pageProps }: AppProps) => {
   console.debug(domain)
