@@ -1,0 +1,13 @@
+*.gif
+*.ico
+*.jpeg
+*.jpg
+*.json
+*.md
+*.png
+*.snap
+*.svg
+*.webp
+node_modules
+__snapshots__
+next-env.d.ts

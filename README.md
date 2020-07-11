@@ -2,8 +2,9 @@
 
 # Church Office
 
-This is the frontend application used by the Berlin.Church.
+This is the frontend application used by the Berlin.Church. You are free to clone it.
 
+This project relies on Oauth0 for authentication. You need to have an account configured before you run it.
 <img width="532" alt="Screenshot 2020-05-20 at 19 46 37" src="https://user-images.githubusercontent.com/694113/82479517-cceb3e00-9ad2-11ea-98df-383dd83f741e.png">
 
 # Installation
@@ -14,7 +15,7 @@ npm install
 
 # Running
 
-After installing you can simply run it via:
+Before running this code locally for development, you need to configure the environment variables in file next.config.js.
 
 ```sh
 npm run dev

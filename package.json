@@ -1,32 +1,68 @@
 {
   "name": "church-office",
   "version": "1.0.0",
-  "description": "",
+  "description": "Backoffice frontend application to manage a church.",
   "main": "index.js",
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "lint": "eslint ./src/** --ext .tsx,.ts",
+    "test": "jest --passWithNoTests"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/berlin-church/church-office.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "berlin.church",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/berlin-church/church-office/issues"
   },
   "homepage": "https://github.com/berlin-church/church-office#readme",
   "dependencies": {
-    "next": "^9.3.5",
+    "@auth0/auth0-spa-js": "^1.10.0",
+    "@material-ui/core": "^4.11.0",
+    "@material-ui/styles": "^4.10.0",
+    "next": "^9.4.4",
+    "ra-data-json-server": "^3.6.2",
     "react": "^16.13.1",
+    "react-admin": "^3.6.2",
     "react-dom": "^16.13.1"
   },
   "devDependencies": {
-    "@types/node": "^13.13.0",
-    "@types/react": "^16.9.34",
-    "typescript": "^3.8.3"
+    "@types/node": "^13.13.12",
+    "@types/react": "^16.9.41",
+    "@typescript-eslint/eslint-plugin": "^2.34.0",
+    "@typescript-eslint/parser": "^2.34.0",
+    "eslint": "^6.8.0",
+    "eslint-config-standard": "^14.1.1",
+    "eslint-config-standard-with-typescript": "^16.0.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-jest": "^23.17.1",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-react": "^7.20.3",
+    "eslint-plugin-react-hooks": "^4.0.5",
+    "eslint-plugin-standard": "^4.0.1",
+    "husky": "^4.2.3",
+    "jest": "^25.5.4",
+    "lint-staged": "^10.2.11",
+    "ts-jest": "^25.5.1",
+    "tslib": "^1.13.0",
+    "typescript": "^3.9.6"
+  },
+  "lint-staged": {
+    "src/**/*.*": [
+      "eslint --fix",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   }
 }
